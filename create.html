@@ -1,0 +1,17 @@
+{% extends 'layout.html' %}
+
+{% block main %}
+  <h1>Crear Tarea</h1>
+
+  <form method="POST" action="/create">
+    <label for="title">Título:</label>
+    <input type="text" id="title" name="title" required /><br />
+
+    <label for="description">Descripción:</label>
+    <textarea id="description" name="description" required></textarea><br />
+
+    <input type="submit" value="Crear" />
+  </form>
+
+  <a href="/">Volver a la lista de tareas</a>
+{% endblock %}

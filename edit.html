@@ -1,0 +1,17 @@
+{% extends 'layout.html' %}
+
+{% block main %}
+  <h1>Editar Tarea</h1>
+
+  <form method="POST" action="/edit/{{ task.id }}">
+    <label for="title">Título:</label>
+    <input type="text" id="title" name="title" value="{{ task.title }}" required /><br />
+
+    <label for="description">Descripción:</label>
+    <textarea id="description" name="description" required>{{ task.description }}</textarea><br />
+
+    <input type="submit" value="Guardar" />
+  </form>
+
+  <a href="/">Volver a la lista de tareas</a>
+{% endblock %}

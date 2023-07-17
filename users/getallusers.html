@@ -1,0 +1,27 @@
+{% extends './layout.html' %}
+
+{% block main %}
+  <h1>Lista de Usuarios</h1>
+
+  <table>
+    <tr>
+      <th>ID</th>
+      <th>Título</th>
+      <th>Descripción</th>
+      <th>Acciones</th>
+    </tr>
+    {% for user in users %}
+      <tr>
+        <td>{{ user.id }}</td>
+        <td>{{ user.username }}</td>
+        <td>{{ user.email }}</td>
+        <td>
+          <a href="/edituser/{{ user.id }}">Editar</a>
+          <a href="/deleteUser/{{ user.id }}">Eliminar</a>
+        </td>
+      </tr>
+    {% endfor %}
+  </table>
+
+  <a href="/addUser">Crear nuevo usuario</a>
+{% endblock %}
